@@ -1,0 +1,23 @@
+/*Header ---------------------------------------------*/
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logo-slogan{
+    font-size: 10px;
+    color: rgb(187, 54, 54);
+    margin-top: -5px;
+}

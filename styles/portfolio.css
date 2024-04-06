@@ -1,0 +1,129 @@
+/*Header ---------------------------------------------*/
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logo-slogan{
+    font-size: 10px;
+    color: rgb(187, 54, 54);
+    margin-top: -5px;
+}
+
+/*Page-------------------------------------------------*/
+body{
+    background-color: #151518 !important;
+}
+.portfolio-main-section{
+    height: 100vh;
+}
+
+
+/*Footer-------------------------------------------------*/
+.footer-element{
+    margin-top: -5px;
+    background-color: #161619;
+    padding: 40px;
+}
+
+.pages-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.pages-container a{
+    color: white;
+    margin: 20px;
+}
+
+
+
+/*Mobile size*/
+@media (max-width: 768px){
+    .footer{
+        background-color: #202023;
+        padding: 10%;
+    }
+
+    .services-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pages-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pages-container a{
+        margin: 10px;
+    }
+
+    .social-links{
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-links button{
+        border-radius: 20px;
+        margin: 20px;
+    }
+
+    .social-links a{
+        padding-top: 4px;
+    }
+
+    .footer-last-text{
+        text-align: center;
+    }
+}
+
+
+/*Mid 1 size*/
+@media (max-width: 1051px){
+}
+
+/*Mid 2 size*/
+@media (max-width: 1200px){
+}
+
+/*Mid 2 size*/
+@media (min-width: 1500px){
+}
+
+
+/*Desktop size*/
+@media (min-width: 769px){
+    .social-links{
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-links button{
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .social-links a{
+        padding-top: 4px;
+    }
+
+    .footer-last-text{
+        text-align: center;
+    }
+}

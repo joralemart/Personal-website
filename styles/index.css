@@ -1,0 +1,376 @@
+body{
+    background-image: url("../images/background2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+/*Main section-------------------------------------------*/
+
+.main-section-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: -6em;
+    margin-bottom: 12em;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.main-section-container * span{
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+}
+
+.greeting-text2-container * span{
+    color: rgb(187, 54, 54);
+}
+
+.down-arrow-image{
+    border-radius: 100%;
+    animation: 1s linear infinite alternate pic;
+}
+
+/*Section 1 Presentation----------------------------------*/
+
+.section-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5em;
+    padding-inline: 20px;
+    min-height: 100vh;
+    background-color: #121215;
+}
+
+.section-1 > div{
+    margin-bottom: 5em;
+}
+
+.section-1 > div > h1{
+    color: white;
+}
+
+.section-1 > div > p{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.section-1-profile-picture{
+    padding: 20px;
+}
+
+.section-1-profile-picture > img{
+    border-radius: 10%;
+    box-shadow: 0px 0px 20px #000000aa;
+}
+
+/*Section 2 Services----------------------------------------*/
+
+.section-2-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.section-2-title h1{
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+}
+
+.services-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.service-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 520px;
+    border-radius: 20px;
+    background-color: #252525cc;
+    box-shadow: 0px 0px 20px #000000;
+    margin-bottom: 50px;
+}
+
+.service-card img{
+    min-width: calc(100% + 40px);
+    margin-top: -40px;
+    border-radius: 20px 20px 0px 0px;
+    height: 250px;
+}
+
+.service-card h1{
+    color: rgb(187, 54, 54);
+}
+
+.service-card p{
+    font-weight: 600;
+}
+
+/*Section 3 Form----------------------------------------*/
+
+.section-3{
+    background-color: #121215;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.section-3-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.section-3-container h1{
+    font-size: 42px;
+}
+
+.section-3-container label{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.section-3-container input{
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.section-3-container textarea{
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.title-container{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.name-and-email-container{
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.name-and-email-container div{
+    margin-bottom: 15px;
+}
+
+.message-and-send-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-and-send-container button{
+    border-radius: 25px;
+    border: none;
+    margin-top: 2em;
+    height: 3em;
+    font-weight: 600;
+    background-color: rgb(187, 54, 54);
+    color: #000000cc;
+}
+
+.message-and-send-container button i{
+    margin-left: 5px;
+}
+
+/*Footer----------------------------------------------*/
+
+.footer-element{
+    margin-top: -5px;
+    background-color: #161619;
+    padding: 40px;
+}
+
+.pages-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.pages-container a{
+    color: white;
+    margin: 20px;
+}
+
+@keyframes pic{
+    from{
+        opacity: 0%;
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(30px);
+        opacity: 100%;
+    }
+}
+
+
+/*Mobile size*/
+@media (max-width: 768px){
+    .down-arrow-image{
+        width: 200px;
+        height: 200px;
+    }
+    
+    .main-section-container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        min-height: 100vh;
+        padding-top: 25vh;
+    }
+    
+    .main-section-container > div{
+        margin-bottom: 50px;
+    }
+    
+    .main-section-container * span{
+        font-size: 36px;
+    }
+
+    .section-1{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .footer{
+        background-color: #202023;
+        padding: 10%;
+    }
+
+    .services-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pages-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pages-container a{
+        margin: 10px;
+    }
+
+    .social-links{
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-links button{
+        border-radius: 20px;
+        margin: 20px;
+    }
+
+    .social-links a{
+        padding-top: 4px;
+    }
+
+    .footer-last-text{
+        text-align: center;
+    }
+}
+
+
+/*Mid 1 size*/
+@media (max-width: 1051px){
+    .services-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*Mid 2 size*/
+@media (max-width: 1200px){
+    .down-arrow-image{
+        width: 256px;
+        height: 256px;
+    }
+}
+
+/*Mid 2 size*/
+@media (min-width: 1500px){
+    .services-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-inline: 2em;
+    }
+}
+
+
+/*Desktop size*/
+@media (min-width: 769px){
+    .greeting-text2-container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .greeting-text2-container > div{
+        margin-right: 20px;
+    }
+
+    .section-1{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .section-1 > div{
+        max-width: 50%;
+    }
+
+    .section-3-container{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .section-3-container .title-container{
+        min-width: 250px;
+        text-align: start;
+    }
+
+    .name-and-email-container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .name-and-email-container .name-container{
+        margin-right: 2em;
+    }
+
+    .social-links{
+        margin: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-links button{
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .social-links a{
+        padding-top: 4px;
+    }
+
+    .footer-last-text{
+        text-align: center;
+    }
+}
+
+

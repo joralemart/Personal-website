@@ -1,0 +1,47 @@
+/*Header ---------------------------------------------*/
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.logo-slogan{
+    font-size: 10px;
+    color: rgb(187, 54, 54);
+    margin-top: -5px;
+}
+
+.header-desktop-container{
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+}
+
+.header-desktop-container * a{
+    color: white;
+    font-weight: 600;
+    font-size: 24;
+    margin-inline: 5px;
+}
+
+.header-desktop-container * a:hover{
+    color: rgb(187, 54, 54);;
+}
+
+@media (max-width: 768px) {
+    .header-desktop-container{
+        display: none;
+    }
+}
+/*--------------------------------------------*/
