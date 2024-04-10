@@ -1,30 +1,3 @@
-function main() {
-  const route = document.location.pathname;
-
-  switch (route) {
-    case "/":
-      createComponent("mobileHeader");
-      createComponent("desktopHeader");
-      createComponent("form");
-      createComponent("footer");
-      break;
-    case "/index.html":
-      createComponent("mobileHeader");
-      createComponent("desktopHeader");
-      createComponent("form");
-      createComponent("footer");
-      break;
-    case "/portfolio.html":
-      createComponent("mobileHeader");
-      createComponent("desktopHeader");
-      createComponent("footer");
-      break;
-
-    default:
-      break;
-  }
-}
-
 function createComponent(name) {
   //Create mobile header
   if (name == "mobileHeader") {
@@ -70,13 +43,16 @@ function createComponent(name) {
     const desktopHeaderComponent = document.createElement("div");
     desktopHeaderComponent.className = "header-desktop-container";
     desktopHeaderComponent.innerHTML = `
-      <div class="header-desktop-container">
+      <div id="link-home" class="header-desktop-container">
+        <a href="/index.html">Inicio</a>
+      </div>
+      <div id="link-portfolio" class="header-desktop-container">
         <a href="/portfolio.html">Portfolio</a>
       </div>
-      <div class="header-desktop-container">
+      <div id="link-services" class="header-desktop-container">
         <a href="/services.html">Servicios</a>
       </div>
-      <div class="header-desktop-container">
+      <div id="link-contact" class="header-desktop-container">
         <a href="/contact.html">Contacto</a>
       </div>
   `;
@@ -86,7 +62,8 @@ function createComponent(name) {
 
   //Create form
   else if (name == "form") {
-    const formComponent = document.createElement("div");
+    const formComponent = document.createElement("form");
+    formComponent.id = "contact-form";
     formComponent.className = "section-3-container";
     formComponent.innerHTML = `
     <div class="title-container">
@@ -96,20 +73,20 @@ function createComponent(name) {
   <div class="form-container">
     <div class="name-and-email-container">
       <div class="name-container">
-        <label class="name-label">Nombre</label>
-        <input class="input is-medium" type="text" placeholder="Tu nombre" />
+        <label class="name-label" for="form-name">Nombre</label>
+        <input id="form-name" class="input is-medium" type="text" placeholder="Tu nombre" />
       </div>
 
       <div class="email-container">
-        <label class="email-label">Email</label>
-        <input class="input is-medium" type="email" placeholder="tu@mail.com" />
+        <label class="email-label" for="form-email">Email</label>
+        <input id="form-email" class="input is-medium" type="email" placeholder="tu@mail.com" />
       </div>
     </div>
 
     <div class="message-and-send-container">
-      <label class="menssage-label">Mensaje</label>
-      <textarea class="textarea has-fixed-size is-medium" placeholder="Escribe tu mensaje" rows="10"></textarea>
-      <button class="button is-medium has-icons-right">
+      <label class="menssage-label" for="form-message">Mensaje</label>
+      <textarea id="form-message" class="textarea has-fixed-size is-medium" placeholder="Escribe tu mensaje" rows="10"></textarea>
+      <button id="form-submit" class="button is-medium has-icons-right">
         Enviar
         <i class="fa-regular fa-paper-plane"></i>
       </button>
@@ -163,6 +140,92 @@ function createComponent(name) {
   `;
     const footerClone = document.importNode(footerComponent, true);
     document.querySelector(".footer-element").appendChild(footerClone);
+  }
+}
+
+function formHandler() {
+  const form = document.getElementById("contact-form");
+  const name = document.getElementById("form-name");
+  const email = document.getElementById("form-email");
+  const submitButton = document.getElementById("form-submit");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("Sending form...");
+    const message = document.getElementById("form-message");
+
+    //Check if fields aren't empty!
+    if (name.value != "" && email.value != "" && message.value != "") {
+      submitButton.classList.add("is-loading");
+      const request = fetch("https://apx-api.vercel.app/api/utils/dwf", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          from: email.innerText,
+          to: "j.ale08.am@gmail.com",
+          message: `${name.value}: ` + message.value,
+        }),
+      })
+        .then((res) => {
+          return res;
+        })
+        .finally(() => {
+          submitButton.classList.remove("is-loading");
+          //Remove fields
+          name.value = "";
+          email.value = "";
+          message.value = "";
+          setTimeout(() => {
+            window.alert("Mensaje enviado!");
+          }, 500);
+        });
+
+      //Case empty
+    } else {
+      window.alert("Completa los campos requeridos!");
+    }
+  });
+}
+
+function main() {
+  const route = document.location.pathname;
+
+  //Check routes, instantiate components.
+  switch (route) {
+    case "/":
+      createComponent("mobileHeader");
+      createComponent("desktopHeader");
+      createComponent("form");
+      createComponent("footer");
+      formHandler();
+      break;
+    case "/index.html":
+      createComponent("mobileHeader");
+      createComponent("desktopHeader");
+      createComponent("form");
+      createComponent("footer");
+      formHandler();
+      break;
+    case "/portfolio.html":
+      createComponent("mobileHeader");
+      createComponent("desktopHeader");
+      createComponent("footer");
+      break;
+    case "/services.html":
+      createComponent("mobileHeader");
+      createComponent("desktopHeader");
+      createComponent("footer");
+      break;
+    case "/contact.html":
+      createComponent("mobileHeader");
+      createComponent("desktopHeader");
+      createComponent("form");
+      createComponent("footer");
+      formHandler();
+      break;
+
+    default:
+      break;
   }
 }
 
