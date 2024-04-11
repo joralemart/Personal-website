@@ -12,22 +12,22 @@ function colorMenuItem(path) {
   const contactItemDesktop = document.querySelector("#link-contact");
 
   switch (path) {
-    case (path = "/index.html"):
+    case (path = "/Personal-website/index.html"):
       homeItem.style.backgroundColor = "rgb(187,54,54)";
       homeItemDesktop.style.backgroundColor = "rgb(187,54,54)";
       break;
 
-    case (path = "/portfolio.html"):
+    case (path = "/Personal-website/portfolio.html"):
       portfolioItem.style.backgroundColor = "rgb(187,54,54)";
       portfolioItemDesktop.style.backgroundColor = "rgb(187,54,54)";
       break;
 
-    case (path = "/services.html"):
+    case (path = "/Personal-website/services.html"):
       servicesItem.style.backgroundColor = "rgb(187,54,54)";
       servicesItemDesktop.style.backgroundColor = "rgb(187,54,54)";
       break;
 
-    case (path = "/contact.html"):
+    case (path = "/Personal-website/contact.html"):
       contactItem.style.backgroundColor = "rgb(187,54,54)";
       contactItemDesktop.style.backgroundColor = "rgb(187,54,54)";
       break;
