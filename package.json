@@ -22,6 +22,7 @@
   "homepage": "https://github.com/joralemart/Personal-website#readme",
   "dependencies": {
     "gh-pages": "^6.1.1",
+    "live-server": "^1.2.2",
     "parcel": "^2.12.0"
   }
 }
