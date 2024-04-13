@@ -1,0 +1,27 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "deploy": "gh-pages",
+    "build-and-deploy": "npm run build && npm run deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joralemart/Personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joralemart/Personal-website/issues"
+  },
+  "homepage": "https://github.com/joralemart/Personal-website#readme",
+  "dependencies": {
+    "gh-pages": "^6.1.1",
+    "parcel": "^2.12.0"
+  }
+}
